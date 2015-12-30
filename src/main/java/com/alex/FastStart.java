@@ -18,7 +18,9 @@ public class FastStart{
 
         String path1 = System.getProperty("java.class.path");
         String FileSeparator = (String) System.getProperty("file.separator");
-        System.out.println("\nProgram path: " + path1.substring(0, path1.lastIndexOf(FileSeparator) + 1));
+        String pathProgram = path1.substring(0, path1.lastIndexOf(FileSeparator) + 1);
+        if (pathProgram.equals("")) pathProgram = System.getProperty("user.dir");
+        System.out.println("\nProgram path: " + pathProgram);
 
 
         Scanner scanner = new Scanner(System.in);
